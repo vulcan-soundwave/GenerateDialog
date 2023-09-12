@@ -3,7 +3,7 @@
 
 #include <QMainWindow>
 
-#include "Dialog/cdialog.h"
+#include "Share/cdialog.h"
 
 namespace Ui {
 class MainWindow;

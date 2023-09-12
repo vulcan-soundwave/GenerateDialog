@@ -27,16 +27,16 @@ CONFIG += c++17
 SOURCES += \
         main.cpp \
         mainwindow.cpp \
-    Dialog/cdialog.cpp \
     ConcreteTab/basicinfotab.cpp \
     ConcreteTab/inputeventtab.cpp \
+    Share/cdialog.cpp \
     Share/ctab.cpp
 
 HEADERS += \
         mainwindow.h \
-    Dialog/cdialog.h \
     ConcreteTab/basicinfotab.h \
     ConcreteTab/inputeventtab.h \
+    Share/cdialog.h \
     Share/ctab.h \
     Factory/tabfactory.hpp
 
