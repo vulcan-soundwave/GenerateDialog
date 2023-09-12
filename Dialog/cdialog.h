@@ -15,8 +15,8 @@ public:
     ~CDialog();
 
 private:
-    BasicInfoTab *prototypeBasicInfoTab__ = nullptr;
-    InputEventTab *prototypeInputEventTab__ = nullptr;
+    CTab *prototypeBasicInfoTab__ = nullptr;
+    CTab *prototypeInputEventTab__ = nullptr;
 };
 
 #endif // CDIALOG_H

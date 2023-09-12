@@ -5,6 +5,8 @@
 #include <QHBoxLayout>
 #include <QTabWidget>
 
+#include "Factory/tabfactory.hpp"
+
 CDialog::CDialog(QWidget *parent) :
     QDialog(parent)
 {
@@ -15,8 +17,10 @@ CDialog::CDialog(QWidget *parent) :
     horizontalLayout->addWidget(tabWidget);
     horizontalLayout->setMargin(0);
 
-    prototypeBasicInfoTab__ = new BasicInfoTab();
-    prototypeInputEventTab__ = new InputEventTab();
+    BasicInfoTab::registerTab();
+    InputEventTab::registerTab();
+    prototypeBasicInfoTab__ = TabFactory::getInstance()->generateInstance("BasicInfoTab");
+    prototypeInputEventTab__ = TabFactory::getInstance()->generateInstance("InputEventTab");
 
     CTab *tab_1 = prototypeBasicInfoTab__->clone();
     CTab *tab_2 = prototypeBasicInfoTab__->clone();

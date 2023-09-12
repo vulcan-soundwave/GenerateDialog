@@ -13,6 +13,7 @@ public:
     virtual ~InputEventTab() override;
 
     InputEventTab(InputEventTab const &tab);
+    static void registerTab(QWidget *parent = nullptr);
 
     virtual CTab *clone() override;
     virtual void buildUi() override;
