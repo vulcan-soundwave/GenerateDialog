@@ -3,6 +3,9 @@
 
 #include <QDialog>
 
+#include "ConcreteTab/basicinfotab.h"
+#include "ConcreteTab/inputeventtab.h"
+
 class CDialog : public QDialog
 {
     Q_OBJECT
@@ -10,6 +13,10 @@ class CDialog : public QDialog
 public:
     explicit CDialog(QWidget *parent = nullptr);
     ~CDialog();
+
+private:
+    BasicInfoTab *prototypeBasicInfoTab__ = nullptr;
+    InputEventTab *prototypeInputEventTab__ = nullptr;
 };
 
 #endif // CDIALOG_H

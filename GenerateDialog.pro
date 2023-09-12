@@ -27,14 +27,22 @@ CONFIG += c++11
 SOURCES += \
         main.cpp \
         mainwindow.cpp \
-    Dialog/cdialog.cpp
+    Dialog/cdialog.cpp \
+    ConcreteTab/basicinfotab.cpp \
+    ConcreteTab/inputeventtab.cpp \
+    Share/ctab.cpp
 
 HEADERS += \
         mainwindow.h \
-    Dialog/cdialog.h
+    Dialog/cdialog.h \
+    ConcreteTab/basicinfotab.h \
+    ConcreteTab/inputeventtab.h \
+    Share/ctab.h
 
 FORMS += \
         mainwindow.ui \
+    ConcreteTab/basicinfotab.ui \
+    ConcreteTab/inputeventtab.ui \
     ConcreteTab/basicinfotab.ui \
     ConcreteTab/inputeventtab.ui
 

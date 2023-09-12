@@ -15,17 +15,18 @@ CDialog::CDialog(QWidget *parent) :
     horizontalLayout->addWidget(tabWidget);
     horizontalLayout->setMargin(0);
 
-    Ui::BasicInfoTab *tab_1 = new Ui::BasicInfoTab();
-    Ui::InputEventTab *tab_2 = new Ui::InputEventTab();
+    prototypeBasicInfoTab__ = new BasicInfoTab();
+    prototypeInputEventTab__ = new InputEventTab();
 
-    QWidget *widget_1 = new QWidget();
-    QWidget *widget_2 = new QWidget();
+    CTab *tab_1 = prototypeBasicInfoTab__->clone();
+    CTab *tab_2 = prototypeBasicInfoTab__->clone();
+    CTab *tab_3 = prototypeInputEventTab__->clone();
+    CTab *tab_4 = prototypeInputEventTab__->clone();
 
-    tab_1->setupUi(widget_1);
-    tab_2->setupUi(widget_2);
-
-    tabWidget->addTab(widget_1, "基础信息");
-    tabWidget->addTab(widget_2, "关联关系");
+    tabWidget->addTab(tab_1, "基础信息-1");
+    tabWidget->addTab(tab_3, "关联关系-1");
+    tabWidget->addTab(tab_2, "基础信息-2");
+    tabWidget->addTab(tab_4, "关联关系-2");
 }
 
 CDialog::~CDialog()
