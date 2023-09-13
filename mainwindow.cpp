@@ -3,6 +3,7 @@
 
 #include "DialogBuilder/settingsdialogbuilder.h"
 #include "DialogBuilder/basicinfodialogbuilder.h"
+#include "DialogBuilder/editinfodialogbuilder.h"
 #include "Director/dialogdirector.h"
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -25,6 +26,14 @@ MainWindow::MainWindow(QWidget *parent) :
     dialog = director->getDialog();
     dialog->setWindowTitle("基础信息");
     dialog->resize(800, 600);
+    dialog->exec();
+
+    // edit info dialog
+    director->setDialogBuilder(new EditInfoDialogBuilder());
+
+    dialog = director->getDialog();
+    dialog->setWindowTitle("新增/编辑信息");
+    dialog->resize(400, 300);
     dialog->exec();
 }
 

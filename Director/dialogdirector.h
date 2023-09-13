@@ -1,4 +1,5 @@
 #pragma once
+
 #include "DialogBuilder/dialogbuilder.h"
 
 class DialogDirector

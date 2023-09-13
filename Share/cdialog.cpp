@@ -1,6 +1,6 @@
-#include "cdialog.h"
-
 #include <QHBoxLayout>
+
+#include "cdialog.h"
 
 CDialog::CDialog(QWidget *parent) :
     QDialog(parent)
@@ -13,7 +13,7 @@ CDialog::~CDialog()
 
 }
 
-void CDialog::setTabWidget(QTabWidget * tabWidget)
+void CDialog::setMainWidget(QWidget *widget)
 {
     okButton = new QPushButton("确定", this);
     cancelButton = new QPushButton("取消", this);
@@ -29,7 +29,7 @@ void CDialog::setTabWidget(QTabWidget * tabWidget)
     horizontalLayout_bottom->addLayout(horizontalLayout_button);
     horizontalLayout_bottom->setContentsMargins(-1, -1, 9, 9);
 
-    verticalLayout_overall->addWidget(tabWidget);
+    verticalLayout_overall->addWidget(widget);
     verticalLayout_overall->addLayout(horizontalLayout_bottom);
     verticalLayout_overall->setMargin(0);
 }

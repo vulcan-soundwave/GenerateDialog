@@ -4,7 +4,6 @@
 #include "basicinfodialogbuilder.h"
 #include "Factory/tabfactory.hpp"
 #include "ConcreteTab/basicinfotab.h"
-#include "ConcreteTab/inputeventtab.h"
 #include "ui_basicinfotab.h"
 
 BasicInfoDialogBuilder::~BasicInfoDialogBuilder()
@@ -14,7 +13,7 @@ BasicInfoDialogBuilder::~BasicInfoDialogBuilder()
 
 void BasicInfoDialogBuilder::buildTabs()
 {
-    tabWidget__ = new QTabWidget();
+    QTabWidget *tabWidget__ = new QTabWidget();
 
     BasicInfoTab::registerTab();
     CTab *prototypeBasicInfoTab = TabFactory::getInstance()->generateInstance("BasicInfoTab");
@@ -25,7 +24,7 @@ void BasicInfoDialogBuilder::buildTabs()
     tabWidget__->addTab(tab1__, "基础信息-1");
     tabWidget__->addTab(tab2__, "基础信息-2");
 
-    dialog__->setTabWidget(tabWidget__);
+    dialog__->setMainWidget(tabWidget__);
 }
 
 void BasicInfoDialogBuilder::buildContent()

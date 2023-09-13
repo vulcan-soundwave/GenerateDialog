@@ -3,13 +3,13 @@
 #include "DialogBuilder/dialogbuilder.h"
 #include "Share/ctab.h"
 
-class SettingsDialogBuilder : public DialogBuilder
+class EditInfoDialogBuilder : public DialogBuilder
 {
     Q_OBJECT
 
 public:
-    SettingsDialogBuilder() = default;
-    virtual ~SettingsDialogBuilder() override;
+    EditInfoDialogBuilder() = default;
+    virtual ~EditInfoDialogBuilder() override;
 
     virtual void buildTabs() override;
     virtual void buildContent() override;
@@ -21,6 +21,5 @@ public slots:
     virtual void sl_cancelButton_clicked() override;
 
 private:
-    CTab *tab1__ = nullptr;
-    CTab *tab2__ = nullptr;
+    CTab *tab__ = nullptr;
 };

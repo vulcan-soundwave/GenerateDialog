@@ -3,7 +3,6 @@
 
 #include "settingsdialogbuilder.h"
 #include "Factory/tabfactory.hpp"
-#include "ConcreteTab/basicinfotab.h"
 #include "ConcreteTab/inputeventtab.h"
 #include "ui_inputeventtab.h"
 
@@ -14,7 +13,7 @@ SettingsDialogBuilder::~SettingsDialogBuilder()
 
 void SettingsDialogBuilder::buildTabs()
 {
-    tabWidget__ = new QTabWidget();
+    QTabWidget *tabWidget__ = new QTabWidget();
 
     InputEventTab::registerTab();
     CTab *prototypeInputEventTab = TabFactory::getInstance()->generateInstance("InputEventTab");
@@ -25,7 +24,7 @@ void SettingsDialogBuilder::buildTabs()
     tabWidget__->addTab(tab1__, "关联关系-1");
     tabWidget__->addTab(tab2__, "关联关系-2");
 
-    dialog__->setTabWidget(tabWidget__);
+    dialog__->setMainWidget(tabWidget__);
 }
 
 void SettingsDialogBuilder::buildContent()

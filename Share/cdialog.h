@@ -1,4 +1,5 @@
 #pragma once
+
 #include <QDialog>
 #include <QTabWidget>
 #include <QPushButton>
@@ -11,7 +12,7 @@ public:
     explicit CDialog(QWidget *parent = nullptr);
     ~CDialog();
 
-    void setTabWidget(QTabWidget *);
+    void setMainWidget(QWidget *);
 
 public:
     QPushButton *okButton;

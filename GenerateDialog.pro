@@ -34,7 +34,9 @@ SOURCES += \
     DialogBuilder/dialogbuilder.cpp \
     DialogBuilder/settingsdialogbuilder.cpp \
     DialogBuilder/basicinfodialogbuilder.cpp \
-    Director/dialogdirector.cpp
+    Director/dialogdirector.cpp \
+    ConcreteTab/editinfotab.cpp \
+    DialogBuilder/editinfodialogbuilder.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -46,12 +48,15 @@ HEADERS += \
     DialogBuilder/dialogbuilder.h \
     DialogBuilder/settingsdialogbuilder.h \
     DialogBuilder/basicinfodialogbuilder.h \
-    Director/dialogdirector.h
+    Director/dialogdirector.h \
+    ConcreteTab/editinfotab.h \
+    DialogBuilder/editinfodialogbuilder.h
 
 FORMS += \
         mainwindow.ui \
     ConcreteTab/basicinfotab.ui \
-    ConcreteTab/inputeventtab.ui
+    ConcreteTab/inputeventtab.ui \
+    ConcreteTab/editinfotab.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

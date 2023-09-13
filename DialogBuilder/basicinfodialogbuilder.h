@@ -21,8 +21,6 @@ public slots:
     virtual void sl_cancelButton_clicked() override;
 
 private:
-    QTabWidget *tabWidget__;
-
     CTab *tab1__ = nullptr;
     CTab *tab2__ = nullptr;
 };
