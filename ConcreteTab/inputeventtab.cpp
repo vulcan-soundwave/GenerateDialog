@@ -17,7 +17,7 @@ InputEventTab::~InputEventTab()
 
 InputEventTab::InputEventTab(InputEventTab const &tab)
 {
-    ui = tab.ui;
+    ui = new Ui::InputEventTab;
 
     buildUi();
 }

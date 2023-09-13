@@ -17,7 +17,7 @@ BasicInfoTab::~BasicInfoTab()
 
 BasicInfoTab::BasicInfoTab(BasicInfoTab const& tab)
 {
-    ui = tab.ui;
+    ui = new Ui::BasicInfoTab;
 
     buildUi();
 }

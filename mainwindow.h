@@ -1,9 +1,5 @@
-#ifndef MAINWINDOW_H
-#define MAINWINDOW_H
-
+#pragma once
 #include <QMainWindow>
-
-#include "Share/cdialog.h"
 
 namespace Ui {
 class MainWindow;
@@ -20,5 +16,3 @@ public:
 private:
     Ui::MainWindow *ui;
 };
-
-#endif // MAINWINDOW_H

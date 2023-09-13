@@ -18,6 +18,6 @@ public:
     virtual CTab * clone() override;
     virtual void buildUi() override;
 
-private:
+public:
     Ui::BasicInfoTab *ui;
 };

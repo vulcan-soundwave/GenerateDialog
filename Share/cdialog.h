@@ -1,10 +1,7 @@
-#ifndef CDIALOG_H
-#define CDIALOG_H
-
+#pragma once
 #include <QDialog>
-
-#include "ConcreteTab/basicinfotab.h"
-#include "ConcreteTab/inputeventtab.h"
+#include <QTabWidget>
+#include <QPushButton>
 
 class CDialog : public QDialog
 {
@@ -14,9 +11,9 @@ public:
     explicit CDialog(QWidget *parent = nullptr);
     ~CDialog();
 
-private:
-    CTab *prototypeBasicInfoTab__ = nullptr;
-    CTab *prototypeInputEventTab__ = nullptr;
-};
+    void setTabWidget(QTabWidget *);
 
-#endif // CDIALOG_H
+public:
+    QPushButton *okButton;
+    QPushButton *cancelButton;
+};

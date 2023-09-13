@@ -30,7 +30,11 @@ SOURCES += \
     ConcreteTab/basicinfotab.cpp \
     ConcreteTab/inputeventtab.cpp \
     Share/cdialog.cpp \
-    Share/ctab.cpp
+    Share/ctab.cpp \
+    DialogBuilder/dialogbuilder.cpp \
+    DialogBuilder/settingsdialogbuilder.cpp \
+    DialogBuilder/basicinfodialogbuilder.cpp \
+    Director/dialogdirector.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -38,7 +42,11 @@ HEADERS += \
     ConcreteTab/inputeventtab.h \
     Share/cdialog.h \
     Share/ctab.h \
-    Factory/tabfactory.hpp
+    Factory/tabfactory.hpp \
+    DialogBuilder/dialogbuilder.h \
+    DialogBuilder/settingsdialogbuilder.h \
+    DialogBuilder/basicinfodialogbuilder.h \
+    Director/dialogdirector.h
 
 FORMS += \
         mainwindow.ui \

@@ -1,39 +1,35 @@
 #include "cdialog.h"
-#include "ui_inputeventtab.h"
-#include "ui_basicinfotab.h"
 
 #include <QHBoxLayout>
-#include <QTabWidget>
-
-#include "Factory/tabfactory.hpp"
 
 CDialog::CDialog(QWidget *parent) :
     QDialog(parent)
 {
-    this->resize(800, 600);
 
-    QTabWidget *tabWidget = new QTabWidget();
-    QHBoxLayout *horizontalLayout = new QHBoxLayout(this);
-    horizontalLayout->addWidget(tabWidget);
-    horizontalLayout->setMargin(0);
-
-    BasicInfoTab::registerTab();
-    InputEventTab::registerTab();
-    prototypeBasicInfoTab__ = TabFactory::getInstance()->generateInstance("BasicInfoTab");
-    prototypeInputEventTab__ = TabFactory::getInstance()->generateInstance("InputEventTab");
-
-    CTab *tab_1 = prototypeBasicInfoTab__->clone();
-    CTab *tab_2 = prototypeBasicInfoTab__->clone();
-    CTab *tab_3 = prototypeInputEventTab__->clone();
-    CTab *tab_4 = prototypeInputEventTab__->clone();
-
-    tabWidget->addTab(tab_1, "基础信息-1");
-    tabWidget->addTab(tab_3, "关联关系-1");
-    tabWidget->addTab(tab_2, "基础信息-2");
-    tabWidget->addTab(tab_4, "关联关系-2");
 }
 
 CDialog::~CDialog()
 {
 
+}
+
+void CDialog::setTabWidget(QTabWidget * tabWidget)
+{
+    okButton = new QPushButton("确定", this);
+    cancelButton = new QPushButton("取消", this);
+    QHBoxLayout *horizontalLayout_bottom = new QHBoxLayout();
+    QHBoxLayout *horizontalLayout_button = new QHBoxLayout();
+    QSpacerItem *horizontalSpacer_button = new QSpacerItem(768, 20, QSizePolicy::Expanding, QSizePolicy::Minimum);
+    QVBoxLayout *verticalLayout_overall = new QVBoxLayout(this);
+
+    horizontalLayout_button->addWidget(okButton);
+    horizontalLayout_button->addWidget(cancelButton);
+
+    horizontalLayout_bottom->addItem(horizontalSpacer_button);
+    horizontalLayout_bottom->addLayout(horizontalLayout_button);
+    horizontalLayout_bottom->setContentsMargins(-1, -1, 9, 9);
+
+    verticalLayout_overall->addWidget(tabWidget);
+    verticalLayout_overall->addLayout(horizontalLayout_bottom);
+    verticalLayout_overall->setMargin(0);
 }
